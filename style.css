@@ -1,0 +1,503 @@
+/* ---- Palette: putih & emas klasik ---- */
+:root{
+  --gold: #b8860b;       /* emas hangat */
+  --gold-2: #c49a2b;
+  --cream: #fffaf0;
+  --dark: #222222;
+  --muted: #6c6c6c;
+}
+
+/* Basic resets */
+body{
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color: var(--dark);
+  background: #fff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Navbar brand */
+.logo-img{
+  width:56px;
+  height:56px;
+  object-fit:cover;
+  border-radius:8px;
+  border: 2px solid rgba(184,134,11,0.12);
+  background: var(--cream);
+  padding:4px;
+}
+
+/* Brand text */
+.brand-text .paroki-name{
+  font-weight:700;
+  color: var(--dark);
+  line-height:1;
+}
+.brand-text small{ color: var(--muted); }
+
+/* Hero */
+.hero-img{
+  height:360px;
+  background-position:center;
+  background-size:cover;
+  position:relative;
+}
+.hero-overlay{
+  background: linear-gradient(180deg, rgba(0,0,0,0.25), rgba(0,0,0,0.45));
+  height:100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.hero .display-6, .hero .lead{
+  color: #fff;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+}
+
+/* Buttons gold */
+.btn-gold{
+  background: linear-gradient(180deg, var(--gold), var(--gold-2));
+  border: none;
+  color: #fff;
+  box-shadow: 0 4px 14px rgba(196,154,43,0.12);
+}
+.btn-outline-gold{
+  border: 1.5px solid var(--gold);
+  color: var(--dark);
+}
+
+/* Section cards */
+.card{
+  border-radius: 12px;
+}
+.card .card-title{
+  color: var(--dark);
+  font-weight:600;
+}
+.card p.small{
+  color: var(--muted);
+}
+
+/* Quick info icons */
+.icon-small{
+  width:64px;
+  height:64px;
+  object-fit:contain;
+}
+
+/* QR */
+.qr-img{
+  width:160px;
+  height:160px;
+  object-fit:cover;
+  border-radius:8px;
+  border: 1px solid rgba(0,0,0,0.06);
+}
+
+/* Footer */
+.footer{
+  background: linear-gradient(180deg, #fff, #fff);
+}
+.text-gold{ color: var(--gold); }
+.text-gold:hover{ color: var(--gold-2); }
+
+/* Responsive tweaks */
+@media (max-width: 767px){
+  .hero-img{ height:220px; }
+  .logo-img{ width:48px; height:48px; }
+  .qr-img{ width:130px; height:130px; }
+}
+
+/* Small visual polish */
+.navbar .nav-link{ color: var(--dark); font-weight:600; letter-spacing: .2px; }
+.navbar .nav-link:hover{ color: var(--gold); }
+
+/* ======= Dropdown Menu Custom ======= */
+.navbar-nav .dropdown:hover .dropdown-menu {
+  display: block;
+  margin-top: 0;
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-menu {
+  border-radius: 12px;
+  border: none;
+  padding: 1rem 0;
+  background-color: #fff;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  min-width: 240px;
+  transition: all 0.25s ease;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+}
+
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.7rem 1.2rem;
+  font-weight: 500;
+  color: var(--dark);
+  transition: all 0.2s ease;
+}
+
+.dropdown-item:hover {
+  background-color: var(--cream);
+  color: var(--gold);
+  padding-left: 1.5rem;
+}
+
+/* Tambahan agar pointer & animasi smooth */
+.navbar-nav .dropdown > a::after {
+  display: none;
+}
+.navbar-nav .dropdown > a {
+  position: relative;
+}
+.navbar-nav .dropdown > a:hover {
+  color: var(--gold);
+}
+
+/* ======= Tambahan khusus untuk home.html ======= */
+.ayat-section {
+  background: #fff;
+}
+
+.narasi-section, .narasi-asa-section, .pendaftaran-section {
+  text-align: center;
+}
+
+.narasi-section h3,
+.narasi-asa-section h3,
+.pendaftaran-section h3 {
+  color: var(--dark);
+  letter-spacing: 0.5px;
+}
+
+.narasi-section p,
+.narasi-asa-section p,
+.pendaftaran-section p {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.pendaftaran-section .btn-gold {
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+@media (max-width: 767px) {
+  .narasi-section h3,
+  .narasi-asa-section h3,
+  .pendaftaran-section h3 {
+    font-size: 1.3rem;
+  }
+}
+
+/* ======= Profil Sejarah Page ======= */
+.sejarah-hero .hero-img {
+  height: 380px;
+  background-position: center;
+  background-size: cover;
+  border-bottom: 3px solid var(--gold);
+}
+
+.sejarah-section h3,
+.peran-section h3 {
+  color: var(--gold);
+}
+
+.sejarah-section p,
+.peran-section p {
+  line-height: 1.7;
+}
+
+.sejarah-section img,
+.peran-section img {
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+}
+
+/* Responsif */
+@media (max-width: 767px) {
+  .sejarah-section, .peran-section {
+    text-align: center;
+  }
+  .sejarah-section img,
+  .peran-section img {
+    margin-bottom: 1rem;
+  }
+}
+
+/* ======= Halaman Kepengurusan ======= */
+.kepengurusan-hero .hero-img {
+  height: 360px;
+  background-position: center;
+  background-size: cover;
+  border-bottom: 3px solid var(--gold);
+}
+
+.sambutan-section .pastor-img {
+  width: 260px;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 16px;
+  border: 3px solid rgba(184,134,11,0.2);
+}
+
+.sambutan-section h3 {
+  color: var(--gold);
+}
+
+.sambutan-section p {
+  line-height: 1.7;
+}
+
+.card img {
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+@media (max-width: 767px) {
+  .sambutan-section {
+    text-align: center;
+  }
+  .sambutan-section .pastor-img {
+    width: 180px;
+    height: 180px;
+    margin-bottom: 1rem;
+  }
+}
+
+/* ======= Halaman Narasi Asa ======= */
+.narasi-hero .hero-img {
+  height: 360px;
+  background-position: center;
+  background-size: cover;
+  border-bottom: 3px solid var(--gold);
+}
+
+.visi-section h3,
+.misi-section h3 {
+  color: var(--gold);
+}
+
+.visi-section .card,
+.misi-section .card {
+  border-radius: 16px;
+  background: #fff;
+}
+
+.misi-section ul li {
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 767px) {
+  .visi-section p,
+  .misi-section ul {
+    text-align: center;
+  }
+}
+
+/* ======= Halaman Pelayanan ======= */
+.pelayanan-hero .hero-img {
+  height: 360px;
+  background-position: center;
+  background-size: cover;
+  border-bottom: 3px solid var(--gold);
+}
+
+.pelayanan-menu .card {
+  border-radius: 16px;
+  transition: all 0.25s ease;
+}
+
+.pelayanan-menu .card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+}
+
+.pelayanan-menu h5 {
+  color: var(--gold);
+}
+
+@media (max-width: 767px) {
+  .pelayanan-hero .hero-img { height: 220px; }
+}
+
+/* ======= Halaman Peran Lektor ======= */
+.peran-hero .hero-img {
+  height: 360px;
+  background-position: center;
+  background-size: cover;
+  border-bottom: 3px solid var(--gold);
+}
+
+.peran-section h3,
+.batin-section h3 {
+  color: var(--gold);
+}
+
+.peran-section .card,
+.batin-section .card {
+  border-radius: 16px;
+  background: #fff;
+  line-height: 1.7;
+}
+
+@media (max-width: 767px) {
+  .peran-section p,
+  .batin-section p {
+    text-align: center;
+  }
+}
+
+/* ======= Halaman Materi Lektor ======= */
+.materi-hero .hero-img {
+  height: 360px;
+  background-position: center;
+  background-size: cover;
+  border-bottom: 3px solid var(--gold);
+}
+
+.tugas-section h3,
+.tata-section h3,
+.persiapan-section h3,
+.pelaksanaan-section h3,
+.evaluasi-section h3 {
+  color: var(--gold);
+}
+
+.tugas-section .card,
+.tata-section .card,
+.persiapan-section .card,
+.pelaksanaan-section .card,
+.evaluasi-section .card {
+  border-radius: 16px;
+  background: #fff;
+  line-height: 1.6;
+}
+
+@media (max-width: 767px) {
+  .materi-hero .hero-img { height: 200px; }
+  .tugas-section .card,
+  .tata-section .card,
+  .persiapan-section .card,
+  .pelaksanaan-section .card,
+  .evaluasi-section .card {
+    padding: 2rem 1rem;
+  }
+}
+
+/* ======= Halaman Makna Bacaan ======= */
+.bacaan-hero .hero-img {
+  height: 360px;
+  background-position: center;
+  background-size: cover;
+  border-bottom: 3px solid var(--gold);
+}
+
+.bacaan-section h3 {
+  color: var(--gold);
+}
+
+.bacaan-section iframe {
+  width: 100%;
+  height: 700px;
+  border: none;
+  border-radius: 10px;
+}
+
+@media (max-width: 767px) {
+  .bacaan-section iframe {
+    height: 500px;
+  }
+}
+
+/* ======= Halaman Jadwal Misa ======= */
+.jadwal-hero .hero-img {
+  height: 360px;
+  background-position: center;
+  background-size: cover;
+  border-bottom: 3px solid var(--gold);
+}
+.jadwal-hero .hero-overlay {
+  background: linear-gradient(180deg, rgba(0,0,0,0.25), rgba(0,0,0,0.5));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+.misa-img {
+  border-radius: 12px;
+  border: 2px solid rgba(184,134,11,0.15);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  max-width: 720px;
+}
+@media (max-width: 767px) {
+  .jadwal-hero .hero-img { height: 220px; }
+  .misa-img { max-width: 100%; }
+}
+
+/* ======= Halaman Dokumen Utama ======= */
+.carousel-section {
+  background: #fff;
+  border-bottom: 3px solid var(--gold);
+}
+
+.carousel-img {
+  height: 520px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.carousel-caption h5 {
+  color: #fff;
+  font-weight: 600;
+}
+
+.carousel-caption p {
+  font-size: 0.9rem;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: invert(1) drop-shadow(0 0 4px rgba(0,0,0,0.3));
+}
+
+.carousel-indicators [data-bs-target] {
+  background-color: var(--gold);
+}
+
+@media (max-width: 767px) {
+  .carousel-img { height: 280px; }
+  .carousel-caption { font-size: 0.85rem; }
+}
+/* ======= Halaman Pendaftaran ======= */
+.pendaftaran-section {
+  background: #fff;
+  border-bottom: 3px solid var(--gold);
+  min-height: 500px;
+}
+
+.pendaftaran-section .btn-gold {
+  font-size: 1rem;
+  letter-spacing: 0.3px;
+  border-radius: 8px;
+}
+
+.form-frame {
+  width: 100%;
+  height: 600px;
+  border: 2px solid rgba(184,134,11,0.25);
+  border-radius: 12px;
+}
+
+@media (max-width: 767px) {
+  .form-frame {
+    height: 500px;
+  }
+}

@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dokumen Utama — Paroki Santa Odilia Bandung</title>
+  <meta name="description" content="Kumpulan foto dan video kegiatan Paroki Santa Odilia Bandung.">
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+   <!-- NAVBAR -->
+  <header class="site-header">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white py-3 shadow-sm">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+          <img src="assets/logo.png" alt="Logo Paroki" class="logo-img">
+          <div class="brand-text">
+            <div class="paroki-name">LEKTOR PAROKI&nbsp;</div>
+            <small class="text-muted d-block">SANTA ODILIA BANDUNG</small>
+          </div>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav ms-auto align-items-center">
+
+            <!-- PROFIL DROPDOWN -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="profil-utama.html">PROFIL</a>
+              <ul class="dropdown-menu shadow">
+                <li><a class="dropdown-item" href="profil-sejarah.html">Sejarah</a></li>
+                <li><a class="dropdown-item" href="profil-kepengurusan.html">Kepengurusan</a></li>
+                <li><a class="dropdown-item" href="profil-narasi asa.html">Narasi Asa</a></li>
+              </ul>
+            </li>
+
+            <!-- PELAYANAN DROPDOWN -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="pelayanan-utama.html">PELAYANAN</a>
+              <ul class="dropdown-menu shadow">
+                <li><a class="dropdown-item" href="pelayanan-peran lektor.html">Peran Lektor</a></li>
+                <li><a class="dropdown-item" href="pelayanan-materi.html">Materi</a></li>
+                <li><a class="dropdown-item" href="pelayanan-makna bacaan.html">Makna Bacaan</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item"><a class="nav-link" href="jadwal misa.html">JADWAL MISA</a></li>
+
+            <!-- DOKUMEN DROPDOWN -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="dokumen-utama.html">DOKUMEN</a>
+              <ul class="dropdown-menu shadow">
+                <li><a class="dropdown-item" href="dokumen-foto.html">Foto</a></li>
+                <li><a class="dropdown-item" href="dokumen-video.html">Video</a></li>
+                <li><a class="dropdown-item" href="dokumen-pengumuman.html">Pengumuman</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link btn btn-gold text-white px-3 ms-2" href="pendaftaran.html">PENDAFTARAN</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- CAROUSEL FOTO & VIDEO -->
+  <section id="carousel-dokumen" class="carousel-section">
+    <div id="fotoVideoCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+
+        <!-- FOTO 1 -->
+        <div class="carousel-item active">
+          <img src="assets/foto1.jpg" class="d-block w-100 carousel-img" alt="Kegiatan Paroki 1">
+          <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3">
+            <h5>Perayaan Misa Minggu Palma</h5>
+            <p>Umat bersama dalam perayaan Minggu Palma di Gereja Santa Odilia Bandung.</p>
+          </div>
+        </div>
+
+        <!-- FOTO 2 -->
+        <div class="carousel-item">
+          <img src="assets/foto2.jpg" class="d-block w-100 carousel-img" alt="Kegiatan Paroki 2">
+          <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3">
+            <h5>Kegiatan Bakti Sosial</h5>
+            <p>Pelayanan kasih bagi masyarakat sekitar oleh para lektor dan OMK.</p>
+          </div>
+        </div>
+
+        <!-- VIDEO -->
+        <div class="carousel-item">
+          <div class="ratio ratio-16x9">
+            <video controls class="rounded">
+              <source src="assets/video1.mp4" type="video/mp4">
+              Browser Anda tidak mendukung pemutaran video.
+            </video>
+          </div>
+          <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3">
+            <h5>Video Dokumentasi Natal Paroki</h5>
+            <p>Klip singkat kegiatan misa malam Natal dan pelayanan umat.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Controls -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#fotoVideoCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#fotoVideoCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+
+      <!-- Indicators -->
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#fotoVideoCarousel" data-bs-slide-to="0" class="active"></button>
+        <button type="button" data-bs-target="#fotoVideoCarousel" data-bs-slide-to="1"></button>
+        <button type="button" data-bs-target="#fotoVideoCarousel" data-bs-slide-to="2"></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER 4 KOLOM -->
+  <section id="info-quick" class="py-5">
+    <div class="container">
+      <div class="row g-3">
+        <!-- Sosial -->
+        <div class="col-12 col-md-3">
+          <div class="card h-100 p-3 text-center">
+            <h6 class="fw-semibold">Logo & Media Sosial</h6>
+            <img src="assets/logo.png" alt="logo" class="mb-2 icon-small">
+            <p class="small mb-1">Follow kami:</p>
+            <div class="d-flex justify-content-center gap-2">
+              <a href="#" class="text-decoration-none text-gold"><i class="bi bi-instagram fs-5"></i></a>
+              <a href="#" class="text-decoration-none text-gold"><i class="bi bi-youtube fs-5"></i></a>
+              <a href="#" class="text-decoration-none text-gold"><i class="bi bi-whatsapp fs-5"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Jadwal Latihan -->
+        <div class="col-12 col-md-3">
+          <div class="card h-100 p-3">
+            <h6 class="fw-semibold">Jadwal Latihan</h6>
+            <ul class="list-unstyled small mb-0">
+              <li><strong>Lektor</strong>: Sabtu 16:00 - 17:30</li>
+              <li><strong>Paduan Suara</strong>: Kamis 18:00 - 19:30</li>
+              <li><strong>Anak & Remaja</strong>: Minggu 08:00 - 09:00</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- QR -->
+        <div class="col-12 col-md-3">
+          <div class="card h-100 p-3 text-center">
+            <h6 class="fw-semibold">QR Kolekte / Kas Lektor</h6>
+            <img src="assets/qr-placeholder.png" alt="QR Kolekte" class="img-fluid mb-2 qr-img">
+            <p class="small text-muted mb-0">Scan untuk donasi digital.</p>
+          </div>
+        </div>
+
+        <!-- Alamat -->
+        <div class="col-12 col-md-3">
+          <div class="card h-100 p-3">
+            <h6 class="fw-semibold">Alamat Gereja</h6>
+            <p class="small mb-1">Jl. Contoh No. 123, Kota Bandung</p>
+            <p class="small mb-0">Telepon: (022) 1234-5678</p>
+            <a href="#" class="small text-gold d-block mt-2">Lihat peta & rute →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer bg-white border-top py-4">
+    <div class="container text-center">
+      <p class="mb-1 small text-muted">© <span id="year"></span> Paroki Santa Odilia Bandung</p>
+      <p class="small text-muted mb-0">Dibuat dengan <i class="bi bi-heart-fill text-gold"></i> untuk komunitas.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
