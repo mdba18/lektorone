@@ -1,2 +1,1 @@
 # lektorone
-coba1
