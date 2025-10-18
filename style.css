@@ -501,3 +501,18 @@ body{
     height: 500px;
   }
 }
+
+footer .form-control {
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+
+footer .btn-gold {
+  background-color: #b59b46;
+  color: white;
+  border-radius: 8px;
+}
+
+footer .btn-gold:hover {
+  background-color: #9a843c;
+}
