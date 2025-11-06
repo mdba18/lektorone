@@ -654,3 +654,10 @@ footer .btn-gold:hover {
 .next-btn {
   right: 40px;
 }
+
+/* ==== Navbar tetap di atas saat discroll ==== */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1030; /* pastikan di atas elemen lain */
+}
