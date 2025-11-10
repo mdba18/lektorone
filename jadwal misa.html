@@ -108,7 +108,7 @@
     <div class="container text-center">
       <h3 class="text-gold mb-4">JADWAL MISA MINGGUAN + PETUGAS</h3>
       <p class="text-muted mb-3">Berikut jadwal misa mingguan dan petugas liturgi yang akan diperbarui setiap minggu.</p>
-      <img id="misaImage" alt="Jadwal Petugas Misa" class="img-fluid rounded shadow-sm misa-img" loading="lazy">
+      <img id="misaImage" alt="Jadwal Petugas Misa" class="img-fluid rounded shadow-sm misa-img">
     </div>
   </section>
 
@@ -274,7 +274,14 @@ document.addEventListener("DOMContentLoaded", function() {
     .then(res => res.text())
     .then(link => {
       if (link !== "NO_FILE_FOUND") {
-        img.src = link + "&t=" + new Date().getTime();
+        const urlParams = new URL(link).searchParams;
+        const id = urlParams.get('id');
+        if (id) {
+        const embedLink = `https://drive.google.com/thumbnail?id=${id}&sz=w1000`;
+        img.src = embedLink + "&t=" + new Date().getTime();
+        } else {
+          img.src = link + "&t=" + new Date().getTime(); 
+        }
       } else {
         img.alt = "Belum ada jadwal misa terbaru.";
       }
