@@ -431,15 +431,32 @@ body{
   justify-content: center;
   height: 100%;
 }
-.misa-img {
-  border-radius: 12px;
-  border: 2px solid rgba(184,134,11,0.15);
-  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
-  max-width: 720px;
+.misaImage {
+  display: block;
+  width: 100%;          /* isi penuh lebar kontainer */
+  height: auto;         /* tinggi menyesuaikan proporsi */
+  max-width: 900px;     /* batas maksimal agar di desktop tidak terlalu besar */
+  margin: 0 auto;       /* posisi tengah */
+  border-radius: 12px;  /* sudut lembut */
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1); /* bayangan halus */
+  transition: opacity 0.4s ease; /* transisi lembut saat gambar diganti */
 }
-@media (max-width: 767px) {
+.misa-img {
+  display: block;
+  width: 100%;          /* isi penuh lebar kontainer */
+  height: auto;         /* tinggi menyesuaikan proporsi */
+  max-width: 900px;     /* batas maksimal agar di desktop tidak terlalu besar */
+  margin: 0 auto;       /* posisi tengah */
+  border-radius: 12px;  /* sudut lembut */
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1); /* bayangan halus */
+  transition: opacity 0.4s ease; /* transisi lembut saat gambar diganti */
+}
+@media (max-width: 576px) {
   .jadwal-hero .hero-img { height: 220px; }
-  .misa-img { max-width: 100%; }
+  .misa-img #misaImage {
+    max-width: 100%;
+    border-radius: 8px;
+  }
 }
 
 /* ======= Halaman Dokumen Utama ======= */

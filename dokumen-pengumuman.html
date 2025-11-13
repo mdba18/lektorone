@@ -218,22 +218,40 @@ document.addEventListener('DOMContentLoaded', function () {
 <script>
 document.addEventListener("DOMContentLoaded", function() {
   const img = document.getElementById("misaImage");
-  const scriptURL = "https://script.google.com/macros/s/AKfycbxA5Nw2Ih9Q7DjCfmZFOddswUE_1HrH4Knv-vz4U18tedWdfqGHVZcVc4wtpkud6qygIA/exec"; 
+  const scriptURL = "https://script.google.com/macros/s/AKfycbx3BQd2EQJ1AtWI5WQZXP0-FOLDnIEbWSw_U9jsen-pd6uhuRDyuxbK8C5qXa8e-2pW/exec"; 
 
-  fetch(scriptURL)
-    .then(res => res.text())
-    .then(link => {
-      if (link !== "NO_FILE_FOUND") {
-        img.src = link + "&t=" + new Date().getTime();
+  // 1️⃣ Ambil cache terakhir dari browser (kalau ada)
+  const cachedLink = localStorage.getItem("latestMisaImage");
+  if (cachedLink) {
+    img.src = cachedLink; // langsung tampil tanpa delay
+  } else {
+    img.alt = "Memuat pengumuman...";
+  }
+
+  // 2️⃣ Ambil versi terbaru dari Apps Script di background
+  async function loadImage() {
+    try {
+      const res = await fetch(scriptURL + "?t=" + new Date().getTime());
+      const link = await res.text();
+
+      if (link && link !== "NO_FILE_FOUND") {
+        const finalLink = link + "&r=" + new Date().getTime();
+        if (img.src !== finalLink) {
+          img.src = finalLink;
+          // Simpan link di localStorage biar nanti bisa tampil instan
+          localStorage.setItem("latestMisaImage", finalLink);
+        }
       } else {
         img.alt = "Belum ada pengumuman terbaru.";
       }
-    })
-    .catch(err => {
+    } catch (err) {
       console.error("Gagal mengambil gambar:", err);
       img.alt = "Terjadi kesalahan memuat pengumuman.";
-    });
+    }
+  }
+  loadImage();
 });
 </script>
+
 </body>
 </html>
