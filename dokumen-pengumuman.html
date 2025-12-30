@@ -247,5 +247,37 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 </script>
 
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const img = document.getElementById("misaImage");
+  const scriptURL = "https://script.google.com/macros/s/AKfycbyxeI2ojPtiA6haj5XwPH6ruU4wZ1WoCaJiXtfIIqYlK1T6Bwx3hD-HN3tnqIrETC_Q/exec"; 
+
+  function loadImage() {
+    fetch(scriptURL)
+      .then(res => res.text())
+      .then(link => {
+        if (link !== "NO_FILE_FOUND") {
+          const urlParams = new URL(link).searchParams;
+          const id = urlParams.get('id');
+          if (id) {
+            const embedLink = `https://drive.google.com/thumbnail?id=${id}&sz=w1000`;
+            img.src = embedLink + "&t=" + new Date().getTime();
+          } else {
+            img.src = link + "&t=" + new Date().getTime(); 
+          }
+        } else {
+          img.alt = "Belum ada pengumuman terbaru.";
+        }
+      })
+      .catch(err => {
+        console.error("Gagal mengambil gambar:", err);
+        img.alt = "Terjadi kesalahan memuat pengumuman.";
+      });
+  }
+
+  loadImage();
+});
+</script>
+
 </body>
 </html>
